@@ -147,19 +147,22 @@ class _LoginState extends State<Login> {
                         style: TextStyle(color: Colors.white),
                       ),
                       function: () {
-                        if (formKey.currentState!.validate()){
-                          if (Exp.isEmailValid(emailController.text)){
+                        if (formKey.currentState!.validate()) {
+                          if (Exp.isEmailValid(emailController.text)) {
                             print('Email Is Valid');
-                          }else{
+                          } else {
                             print('Email Is InValid');
                           }
-                          if(Exp.isPhoneValid(phoneController.text)){
-    print('phone Is Valid');
-    }else{
-    print('Phone Is InValid');
-    }}
-                        if(Exp.isEmailValid(emailController.text)&&(Exp.isPhoneValid(phoneController.text))){
-                          navigateTo(context,const MyHomePage(title:'Exp Flutter'));
+                          if (Exp.isPhoneValid(phoneController.text)) {
+                            print('phone Is Valid');
+                          } else {
+                            print('Phone Is InValid');
+                          }
+                        }
+                        if (Exp.isEmailValid(emailController.text) &&
+                            (Exp.isPhoneValid(phoneController.text))) {
+                          navigateTo(
+                              context, const MyHomePage(title: 'Exp Flutter'));
                         }
                       }),
                   Padding(
@@ -171,7 +174,7 @@ class _LoginState extends State<Login> {
                             onPressed: () {
                               // navigateTo(context, Register());
                             },
-                            child: Text(
+                            child: const Text(
                               'Create Account',
                             ))
                         //style: TextStyle(color: HexColor('#07094D'),),))
